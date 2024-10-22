@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+<div class="container mx-auto py-6">
+    <div class="mt-10">
+        {% if obj  %}
+        <div class="flex ites-center justify-center text-gray-600">
+            <div class="max-w-3xl w-full text-center">
+                <div class="flex drop-shadow bg-white overflow-hidden rounded-xl">
+                    <div class="flex flex-1 items-center justify-center">
+                        <a class="text-xl" href="">http://{{ request.META.HTTP_HOST }}{% url 'seortedurl' obj.code %}</a>
+                    </div>
+                    <button class="bg-gray-100 flex items-center justify-center px-6 py-4">Copy</button>
+                </div>
+                <div class="text-left mt-5">
+                    <p class="text-left">
+                        <span class="text-gray-500">{{ obj.site_url}}</span>
+                    </p>
+                    <div class="flex justify-center mt-10">
+                        <a href="{% url 'home' %}" class="rounded-xl shadow px-6 py-4 bg-blue-500 text-white">
+                            Try other site
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        {% include "website/components/input-form.html" %}
+        {% endif %}
+    </div>
+    
+   
+    
+</div>
+{% endblock content %}

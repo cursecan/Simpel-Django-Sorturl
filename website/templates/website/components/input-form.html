@@ -1,0 +1,18 @@
+{% load widget_tweaks %}
+
+<div class="flex items-center justify-center">
+    <div class="max-w-xl w-full">
+        <div class="">
+            <div class="text-center text-lg text-gray-500">
+                Type link bellow
+            </div>
+            <form action="" method="post" class="mt-6">
+                {% csrf_token %}
+                <div class="text-lg flex rounded-xl overflow-hidden bg-white shadow">
+                    {% render_field form.site_url class="px-6 py-4 flex-1 outline-none" placeholder="https://website.com" %}
+                    <button type="submit" class="px-6 bg-gray-100 flex items-center">Generate</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
